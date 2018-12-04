@@ -26,7 +26,10 @@ class Api::MenusController < ApplicationController
 
   # PATCH/PUT /menus/1
   def update
+    @menu.dishes.destroy_all
     if @menu.update_attributes(menu_params)
+
+      # byebug
 
       render json: @menu
     else
