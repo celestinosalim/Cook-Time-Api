@@ -107,3 +107,18 @@ menuDish7.save
 
 menuDish8 = MenuDish.new({dish_id: sweet_fries.id, menu_id: wednesday_menu.id})
 menuDish8.save
+
+
+admin = User.new
+admin.name = "admin"
+admin.email = 'admin@admin.com'
+admin.password = 'admin'
+admin.password_confirmation = 'admin'
+admin.admin = true
+admin.save
+user = User.new
+user.name = "alex"
+user.email = 'alex@alex.com'
+user.password = 'alex'
+user.password_confirmation = 'alex'
+user.save

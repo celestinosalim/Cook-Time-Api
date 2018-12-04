@@ -1,4 +1,5 @@
 class Api::MenusController < ApplicationController
+  before_action :authenticate_user
   before_action :set_menu, only: [:show, :update, :destroy]
 
   # GET /menus
