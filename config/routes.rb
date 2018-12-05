@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+
+  scope '/api' do
+  post 'user_token' => 'user_token#create'
+  resources :users, only: %i[show]
+  end
+
+
   namespace :api do
     resources :menu_dishes
     resources :menus

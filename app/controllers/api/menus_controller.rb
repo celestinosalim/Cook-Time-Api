@@ -1,10 +1,10 @@
 class Api::MenusController < ApplicationController
+  before_action :authenticate_user
   before_action :set_menu, only: [:show, :update, :destroy]
 
   # GET /menus
   def index
     @menus = Menu.all
-
     render json: @menus
   end
 
@@ -26,16 +26,21 @@ class Api::MenusController < ApplicationController
 
   # PATCH/PUT /menus/1
   def update
-    @menu.dishes.destroy_all
-    if @menu.update_attributes(menu_params)
-
+    # byebug
+    if (current_user.admin?)
+      @menu.dishes.destroy_all
+      if @menu.update_attributes(menu_params)
       # byebug
-
       render json: @menu
-    else
+      else
       render json: @menu.errors, status: :unprocessable_entity
-    end
+      end
+  else
+    render json: @menu.errors
   end
+end
+
+
 
   # DELETE /menus/1
   def destroy
