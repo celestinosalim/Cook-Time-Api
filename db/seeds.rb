@@ -91,9 +91,6 @@ menuDish2.save
 menuDish3 = MenuDish.new({dish_id: bagel_dish.id, menu_id: monday_menu.id})
 menuDish3.save
 
-menuDish4 = MenuDish.new({dish_id: vegan_dish.id, menu_id: monday_menu.id})
-menuDish4.save
-
 
 menuDish5 = MenuDish.new({dish_id: cheeseburgers.id, menu_id: friday_menu.id})
 menuDish5.save

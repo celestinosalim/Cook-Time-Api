@@ -1,4 +1,5 @@
 class Api::MenusController < ApplicationController
+  before_action :authenticate_user
   before_action :set_menu, only: [:show, :update, :destroy]
 
   # GET /menus
@@ -52,4 +53,5 @@ class Api::MenusController < ApplicationController
     def menu_params
       params.require(:menu).permit(:day, :image, :dishes_attributes => [:id, :name,:description, :image])
     end
+
 end

@@ -43,7 +43,7 @@ def create
   private
   # Setting up strict parameters for when we add account creation.
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar)
   end
   # Adding a method to check if current_user can update itself.
   # This uses our UserModel method.
