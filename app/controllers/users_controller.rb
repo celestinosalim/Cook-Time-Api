@@ -49,6 +49,7 @@ def create
   # This uses our UserModel method.
   def authorize
     return_unauthorized unless current_user && current_user.can_modify_user?(params[:id])
+    
   end
 
 
