@@ -11,7 +11,7 @@ class HomeController < ApplicationController
       if current_user
       render json: { status: 200, msg: "You are currently Logged-in as #{current_user.username}" }
       else
-        render json: {status: 404 msg: "Invalid User"}
+        render json: {status: 404, msg: "Invalid User"}
       end
     end
 
